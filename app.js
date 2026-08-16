@@ -7,7 +7,7 @@
 // 1. Configuration
 // -------------------------------------------------------------
 const CONFIG = {
-  name: "Fian",              // Recipient name
+  name: "ucen",              // Recipient name
   date: "11 · 08 · 26",      // Birthday date
   runnerSpeed: 1.5,          // Hero runner speed
 };
@@ -811,10 +811,31 @@ const PUZZLE_LETTERS = {
 
 function initPuzzleGame() {
   const pieces = document.querySelectorAll(".puzzle-piece");
+  const pool = document.getElementById("puzzle-pieces-pool");
   const completeBanner = document.getElementById("puzzle-complete-banner");
   const messageCard = document.getElementById("puzzle-message-card");
   
-  if (!pieces.length) return;
+  if (!pieces.length || !pool) return;
+  
+  const poolWidth = pool.clientWidth || 280;
+  const poolHeight = pool.clientHeight || 180;
+  
+  // Scatter pieces randomly within the pool bounds
+  pieces.forEach((piece, index) => {
+    const pieceWidth = piece.offsetWidth || (poolWidth > 280 ? 75 : 60);
+    const pieceHeight = piece.offsetHeight || (poolWidth > 280 ? 100 : 80);
+    
+    const maxLeft = Math.max(10, poolWidth - pieceWidth - 10);
+    const maxTop = Math.max(10, poolHeight - pieceHeight - 10);
+    
+    const randomLeft = Math.floor(Math.random() * maxLeft);
+    const randomTop = Math.floor(Math.random() * maxTop);
+    const randomRot = Math.floor(Math.random() * 40) - 20; // -20deg to 20deg
+    
+    piece.style.left = `${randomLeft}px`;
+    piece.style.top = `${randomTop}px`;
+    piece.style.transform = `rotate(${randomRot}deg)`;
+  });
   
   let snappedCount = 0;
   
@@ -1268,9 +1289,7 @@ function initEnvelopeSystem() {
     envelope.classList.add("opened");
     
     setTimeout(() => {
-      if (filmstrip) {
-        filmstrip.classList.add("revealed");
-      }
+      if (filmstrip) filmstrip.classList.add("revealed");
     }, 500);
   });
   
