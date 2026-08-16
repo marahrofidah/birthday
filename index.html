@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <meta name="description" content="A personal digital gift made just for you.">
+  
+  <!-- Custom Favicon (Emoji-Free Gold Dot) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23CBB08C%22/></svg>">
+  
+  <!-- Google Fonts: Inter, Cormorant Garamond, and Dancing Script (cute handwritten calligraphy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Wrapper -->
+  <div id="app-container">
+
+    <!-- 1. OPENING / LANDING -->
+    <section id="slide-landing" class="slide active theme-maroon">
+      <div class="hero-track-container">
+        <svg class="hero-track-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <path d="M -50,120 Q 250,90 500,120 T 1050,120" fill="none" stroke="rgba(243, 237, 226, 0.2)" stroke-width="1.5" stroke-dasharray="6 6" />
+        </svg>
+      </div>
+
+      <div class="landing-content">
+        <h1 class="landing-title-small font-handwritten">aloo ucen jelek</h1>
+        <h2 class="landing-title-large">pibesdeyyy</h2>
+        
+        <!-- Sticker Cutout frame -->
+        <div class="landing-sticker-container">
+          <div class="sticker-outline-wrap">
+            <img id="img-landing-person" src="assets/photos/lucu.png" alt="Birthday portrait placeholder" class="sticker-cutout" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23EDE8E2%22/><text x=%2250%22 y=%2255%22 font-size=%226%22 font-family=%22sans-serif%22 fill=%22%237A7571%22 text-anchor=%22middle%22>landing_person.png</text></svg>'">
+          </div>
+        </div>
+
+        <p class="landing-note">gausa babibu cepet pencet dibawah ni haa</p>
+        
+        <button id="btn-start" class="cta-button" aria-label="Start experience">
+          let's gooo
+        </button>
+      </div>
+
+      <div class="landing-footer">
+        <span class="date-display">17</span>
+      </div>
+
+      <!-- Hero Runner -->
+      <div id="hero-runner-wrap" class="runner-wrap">
+        <div class="runner-element">
+          <div class="runner-sprite">
+            <div class="runner-head"></div>
+            <div class="runner-torso"></div>
+            <div class="runner-arm arm-back"></div>
+            <div class="runner-arm arm-front"></div>
+            <div class="runner-leg leg-back">
+              <div class="runner-shin"></div>
+            </div>
+            <div class="runner-leg leg-front">
+              <div class="runner-shin"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Slides -->
+    <main id="main-content" class="hidden">
+
+      <!-- 2. BIRTHDAY INTRO (RETRO CAMERA VIEWPORT UNLOCK) -->
+      <section id="slide-intro" class="slide theme-cream">
+        
+        <div class="section-content text-center">
+          <p class="intro-sub font-handwritten">So...</p>
+          <h2 class="intro-title">Tudeyy is ur dey bwahahaha</h2>
+          
+          <!-- Retro Camera Viewfinder Section -->
+          <div class="retro-camera-container">
+            <!-- Ejected Polaroid card (Pre-ejection hides behind camera body) -->
+            <div class="camera-polaroid-output" id="polaroid-photo-output">
+              <div class="tape-horizontal-top"></div>
+              <div class="photo-wrap">
+                <img src="assets/photos/merah.png" alt="Developed Memory" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23EDE8E2%22/><text x=%2250%22 y=%2255%22 font-size=%226%22 font-family=%22sans-serif%22 fill=%22%237A7571%22 text-anchor=%22middle%22>landing_person.png</text></svg>'">
+              </div>
+              <p class="polaroid-caption font-handwritten">Hussein sudah besar</p>
+            </div>
+
+            <!-- Vector Camera Body -->
+            <div class="retro-camera">
+              <!-- Shutter Release Button -->
+              <button id="btn-camera-shutter" class="camera-shutter-btn" disabled aria-label="Snap photo">
+                <span class="shutter-inner"></span>
+              </button>
+              
+              <!-- Flash casing -->
+              <div class="camera-top">
+                <div class="camera-flash-bulb"></div>
+                <div class="camera-viewfinder-small"></div>
+              </div>
+              
+              <!-- Lens viewport -->
+              <div class="camera-lens-outer">
+                <div class="camera-lens-inner">
+                  <div class="viewfinder-content">
+                    <span class="vf-num vf-left">21</span>
+                    <span class="vf-num vf-right">21</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focus Drag Slider -->
+            <div class="camera-focus-control">
+              <p class="focus-label">pokusin ini cevatt abistu cekrek duarr:</p>
+              <div class="slider-wrapper">
+                <input type="range" id="camera-focus-slider" min="5" max="95" value="15" aria-label="Lens focus slider">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide-indicator unlock-guide">
+          <span id="canvas-instructions-text">pokusin bistu cekrek!!</span>
+        </div>
+      </section>
+
+      <!-- 3. SCRAPBOOK JIGSAW PUZZLE (A FEW THINGS I WANT TO SAY) -->
+      <section id="slide-sayings" class="slide theme-maroon">
+        <div class="section-content text-center">
+          <p class="section-subtext text-serif-italic">susun puzzle nyaa yaaa</p>
+          
+          <div class="puzzle-game-container">
+            <!-- 3D Target Snap Polaroid Frame -->
+            <div class="puzzle-polaroid-container" id="puzzle-card-container">
+              <div class="puzzle-polaroid-card" id="puzzle-target">
+                
+                <!-- FRONT SIDE (Photo grid) -->
+                <div class="polaroid-card-face polaroid-card-front">
+                  <div class="polaroid-inner-grid">
+                    <!-- Target Slots (Ghost placeholders) -->
+                    <div class="snap-slot slot-tl" data-slot="1"></div>
+                    <div class="snap-slot slot-tr" data-slot="2"></div>
+                    <div class="snap-slot slot-bl" data-slot="3"></div>
+                    <div class="snap-slot slot-br" data-slot="4"></div>
+                  </div>
+                  <div class="polaroid-bottom-border">
+                    <span class="polaroid-date font-handwritten" id="polaroid-caption-text">our run</span>
+                  </div>
+                </div>
+                
+                <!-- BACK SIDE (Surprise Photo) -->
+                <div class="polaroid-card-face polaroid-card-back">
+                  <div class="polaroid-back-photo-wrap">
+                    <img src="assets/photos/lucu.png" alt="Back Photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23EDE8E2%22/><text x=%2250%22 y=%2255%22 font-size=%226%22 font-family=%22sans-serif%22 fill=%22%237A7571%22 text-anchor=%22middle%22>lucu.png</text></svg>'">
+                  </div>
+                  <div class="polaroid-bottom-border">
+                    <span class="polaroid-date font-handwritten" id="polaroid-back-caption-text">adick gemac nya suda 21th</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+            <!-- Pieces Container where pieces spawn randomly -->
+            <div class="puzzle-pieces-pool" id="puzzle-pieces-pool">
+              <!-- Piece 1 -->
+              <div class="puzzle-piece" id="piece-1" data-piece="1" style="left: 10px; top: 10px; transform: rotate(-5deg);">
+                <div class="piece-image-wrap img-part-1"></div>
+              </div>
+              <!-- Piece 2 -->
+              <div class="puzzle-piece" id="piece-2" data-piece="2" style="left: 140px; top: 10px; transform: rotate(4deg);">
+                <div class="piece-image-wrap img-part-2"></div>
+              </div>
+              <!-- Piece 3 -->
+              <div class="puzzle-piece" id="piece-3" data-piece="3" style="left: 30px; top: 110px; transform: rotate(-8deg);">
+                <div class="piece-image-wrap img-part-3"></div>
+              </div>
+              <!-- Piece 4 -->
+              <div class="puzzle-piece" id="piece-4" data-piece="4" style="left: 160px; top: 110px; transform: rotate(6deg);">
+                <div class="piece-image-wrap img-part-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. RETRO CRT TV GALLERY (LANDSCAPE PHOTO SWITCHER) -->
+      <section id="slide-little-things" class="slide theme-cream">
+        <div class="section-content text-center">
+          <h2 class="section-heading font-handwritten">TV kitaaa</h2>
+          <p class="section-subtext text-serif-italic">pencet pencet sajaa ya</p>
+          
+          <div class="tv-game-container">
+            <div class="tv-set">
+              <!-- Wooden CRT TV Cabinet -->
+              <div class="tv-cabinet">
+                <!-- TV Screen Area -->
+                <div class="tv-screen-bezel">
+                  <div class="tv-screen-wrapper">
+                    <!-- The Screen Content -->
+                    <div class="tv-screen-content">
+                      <img id="tv-photo" src="assets/photos/atu.jpg" alt="Memory Photo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%232b2b2b%22/><text x=%2250%22 y=%2255%22 font-size=%226%22 font-family=%22sans-serif%22 fill=%22%237a7571%22 text-anchor=%22middle%22>atu.jpg</text></svg>'">
+                      <div class="tv-scanlines"></div>
+                      <div class="tv-glass-glare"></div>
+                      <canvas id="tv-static-canvas" class="tv-static-canvas"></canvas>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- TV Control Panel (Right Side) -->
+                <div class="tv-controls">
+                  <div class="tv-brand font-handwritten">Sony-21</div>
+                  
+                  <!-- Rotary dial knob -->
+                  <div class="tv-dial" id="tv-dial">
+                    <div class="dial-pointer"></div>
+                  </div>
+                  
+                  <!-- Push buttons -->
+                  <div class="tv-button-group">
+                    <button class="tv-btn" id="tv-btn-next">CH +</button>
+                    <button class="tv-btn" id="tv-btn-prev">CH -</button>
+                  </div>
+                  
+                  <!-- Speakers slots -->
+                  <div class="tv-speaker">
+                    <div class="grill-line"></div>
+                    <div class="grill-line"></div>
+                    <div class="grill-line"></div>
+                    <div class="grill-line"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Yellow Lined Memo Notepad below TV -->
+            <div class="tv-notepad">
+              <div class="notepad-header">
+                <span class="notepad-spiral"></span>
+                <span class="notepad-spiral"></span>
+                <span class="notepad-spiral"></span>
+                <span class="notepad-spiral"></span>
+                <span class="notepad-spiral"></span>
+              </div>
+              <div class="notepad-paper">
+                <div class="notepad-content">
+                  <h3 class="notepad-title font-handwritten" id="notepad-title">chapter 1</h3>
+                  <p class="notepad-text" id="notepad-text">hei hei, makasii udaa ada yaa ucen, ko km baik bgt si kan aku jadi arghh gitu...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. VINYL PLAYER (VOICE NOTE - MAIN HIGHLIGHT) -->
+      <section id="slide-voice-note" class="slide theme-maroon">
+        <div class="section-content text-center">
+          <p class="audio-intro font-handwritten">Ini gausa di denger juga gapapa, prik soalnya bwahahaha</p>
+          
+          <!-- Vinyl Visualizer Area -->
+          <div class="vinyl-player-section">
+            <audio id="real-audio" src="assets/ni.MP3" preload="metadata"></audio>
+            
+            <div class="vinyl-deck-container">
+              <!-- Audio glow background -->
+              <div class="player-glow"></div>
+              
+              <!-- Custom Visualizer grooves canvas wraps around disc -->
+              <div class="vinyl-visualizer-canvas-wrap">
+                <canvas id="waveform-canvas" width="400" height="400"></canvas>
+              </div>
+
+              <!-- Rotating Vinyl Record Disc -->
+              <div class="vinyl-record-wrap">
+                <button id="btn-vinyl-disc" class="vinyl-disc-button" aria-label="Play or pause record">
+                  <div class="vinyl-grooves">
+                    <div class="vinyl-center-sticker">
+                      <!-- Center gold label -->
+                      <div class="vinyl-spindle-hole"></div>
+                      <div class="vinyl-sticker-text font-handwritten">Play Me</div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              
+              <!-- Tonearm / Needle needle (Tapping this swings it) -->
+              <button id="vinyl-tonearm" class="vinyl-tonearm" aria-label="Move record needle needle">
+                <svg viewBox="0 0 100 200" width="80" height="160" fill="none" stroke="#CBB08C" stroke-width="2">
+                  <circle cx="50" cy="20" r="10" fill="#2A2725" />
+                  <path d="M 50,20 Q 70,80 50,140 L 40,165" />
+                  <rect x="33" y="165" width="14" height="20" rx="2" fill="#2A2725" stroke="#CBB08C" stroke-width="1.5"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Custom Playback Info -->
+            <div class="vinyl-playback-info">
+              <div class="player-time-row">
+                <span id="audio-time-current">0:00</span>
+                <span id="audio-time-total">0:00</span>
+              </div>
+              <div id="audio-progress-container" class="audio-progress-wrap">
+                <div id="audio-progress-bar" class="audio-progress-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. FINAL MESSAGE (3D ENVELOPE REDESIGN) -->
+      <section id="slide-final-message" class="slide theme-maroon">
+        <canvas id="ending-canvas"></canvas>
+        <div class="section-content final-card-wrap">
+          
+          <div class="envelope-wrapper">
+            <div class="envelope" id="envelope-main">
+              <!-- Envelope Flap -->
+              <div class="envelope-flap"></div>
+              <!-- Envelope Back (base inside) -->
+              <div class="envelope-back"></div>
+              
+              <!-- Envelope Letter Sheet (Slides Up) -->
+              <div class="envelope-letter" id="envelope-letter">
+                <div class="letter-body">
+                  <h2 class="final-heading font-handwritten">Surat'an</h2>
+                  <p>Happy birthday, <span class="recipient-name">ucen!</span></p>
+                  <br>
+                  <p>21 yaa akhirnya yeyyy</p>
+                  <p>ga kerasaa udh gede aja anak kecil yg di foto tadi</p>
+                  <br>
+                  <p>makasii makasii makasii buwattt semuanyaaaa sampe gabisa di ungkapin sangking baik nya si ucen ini, gimana kaga kecintaan bjirr</p>
+                  <br>
+                  <p>semogaa di umur baru ini semua masalahnya membaik, semogaa apa pun yang lagi km kejar sekarang bisa pelan' tercapai semuwanyaa, semoga rezekinya lancarr, larinya juga makin kenceng, dan teruss bisa berkembang se dompetnya bwahahaha.</p>
+                  <br>
+                  <p>tetep jadi ucen yang baik tp gateli itu yaa yaa yaaaa</p>
+                  <p>pida nda bisa ngasi apa' ee cenn cm bisa ngasi kemarin doang semoga bermanfaat deee</p>
+                  <br>
+                  <p>once again, happy 21st..</p>
+                  <p>semoga tahun ini jadi tahun yg baik buatmu ya ucen.</p>
+                  <br>
+                  <p class="signature font-handwritten">— pidaa</p>
+                  
+                  <!-- Hidden container to support legacy script references -->
+                  <div id="letter-filmstrip-strip" style="display: none;"></div>
+                </div>
+              </div>
+              
+              <!-- Envelope Front (Folds up over letter) -->
+              <div class="envelope-front"></div>
+              
+              <!-- Wax Seal (Click to Open) -->
+              <button class="wax-seal" id="wax-seal-button" aria-label="Open birthday envelope">
+                <div class="wax-seal-inner">P</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation Track -->
+    <div id="bottom-track-nav" class="hidden locks-navigator">
+      <div class="track-line"></div>
+      
+      <div id="nav-runner" class="runner-wrap">
+        <div class="runner-sprite mini">
+          <div class="runner-head"></div>
+          <div class="runner-torso"></div>
+          <div class="runner-arm arm-back"></div>
+          <div class="runner-arm arm-front"></div>
+          <div class="runner-leg leg-back"><div class="runner-shin"></div></div>
+          <div class="runner-leg leg-front"><div class="runner-shin"></div></div>
+        </div>
+      </div>
+      
+      <div class="track-dots">
+        <button class="track-dot active" data-index="0" aria-label="Intro"></button>
+        <button class="track-dot" data-index="1" aria-label="Sayings"></button>
+        <button class="track-dot" data-index="2" aria-label="Reasons"></button>
+        <button class="track-dot" data-index="3" aria-label="Song"></button>
+        <button class="track-dot" data-index="4" aria-label="Letter"></button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
