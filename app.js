@@ -8,7 +8,7 @@
 // -------------------------------------------------------------
 const CONFIG = {
   name: "ucen",              // Recipient name
-  date: "11 · 08 · 26",      // Birthday date
+  date: "17 · 08 · 26",      // Birthday date
   runnerSpeed: 1.5,          // Hero runner speed
 };
 
